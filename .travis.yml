@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t pouyahobbi/docker-react:latest  -f Dockerfile.dev .
+
+script : 
+  - docker run pouyahobbi/docker-react npm run test -- --coverage # coverage couses that after run test then exit it
+# should look 4 in section  7
